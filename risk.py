@@ -9,7 +9,7 @@ def generar_grafo(csv_file, total_nodes):
     # Leer el archivo CSV y seleccionar nodos aleatorios
     with open(csv_file, 'r') as file:
         reader = csv.reader(file)
-        lines = [line for line in reader if len(line) >= 2]  # Verificar si la línea tiene al menos dos valores
+        lines = [line for line in reader if len(line) >= 2]
         lines = random.sample(lines, total_nodes)
         
         # Agregar nodos al grafo
@@ -41,7 +41,7 @@ def dijkstra(G, inicio, destino):
     while nodos_vistos != list(G.nodes()):
         nodos_no_vistos = {nodo: distancias[nodo] for nodo in set(G.nodes()) - set(nodos_vistos)}
         if not nodos_no_vistos:
-            break  # Si no hay nodos no visitados, salir del bucle
+            break 
         nodo_min = min(nodos_no_vistos, key=nodos_no_vistos.get)
         nodos_vistos.append(nodo_min)
 
